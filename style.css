@@ -1,1 +1,408 @@
+/* ============================================ */
+/* ESTILOS GLOBAIS - PROJETO AGRINHO 2026       */
+/* Cores: Verde (#2e7d32), Azul (#1565c0),     */
+/*        Marrom (#8d6e63), Fundo claro (#f5f5f5) */
+/* ============================================ */
 
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f5f5f5;
+    color: #1a1a1a;
+    line-height: 1.6;
+    transition: all 0.3s ease;
+}
+
+/* Container padrão para centralizar conteúdo */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* ============================================ */
+/* BOTÃO E PAINEL DE ACESSIBILIDADE             */
+/* ============================================ */
+.acessibilidade-btn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #2e7d32;
+    color: white;
+    padding: 12px 18px;
+    border-radius: 50px;
+    cursor: pointer;
+    font-weight: bold;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    z-index: 1000;
+    transition: background 0.3s;
+    font-size: 14px;
+}
+
+.acessibilidade-btn:hover {
+    background-color: #1565c0;
+}
+
+.acessibilidade-painel {
+    position: fixed;
+    bottom: 80px;
+    right: 20px;
+    background-color: white;
+    border-radius: 12px;
+    padding: 15px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    display: none;
+    flex-direction: column;
+    gap: 10px;
+    z-index: 999;
+    border: 1px solid #ccc;
+}
+
+.acessibilidade-painel button {
+    background-color: #2e7d32;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background 0.3s;
+}
+
+.acessibilidade-painel button:hover {
+    background-color: #1565c0;
+}
+
+/* Classe para alto contraste */
+.alto-contraste {
+    background-color: #000000 !important;
+    color: #ffff00 !important;
+}
+
+.alto-contraste a,
+.alto-contraste button,
+.alto-contraste .card {
+    background-color: #222 !important;
+    color: #ffff00 !important;
+    border-color: #ffff00 !important;
+}
+
+/* ============================================ */
+/* CABEÇALHO E NAVEGAÇÃO                        */
+/* ============================================ */
+header {
+    background: linear-gradient(135deg, #2e7d32 0%, #1565c0 100%);
+    color: white;
+    padding: 20px 0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.logo h1 {
+    font-size: 1.8rem;
+}
+
+.logo p {
+    font-size: 0.9rem;
+    opacity: 0.9;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+    margin-top: 15px;
+    flex-wrap: wrap;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    transition: opacity 0.3s;
+}
+
+nav a:hover {
+    opacity: 0.7;
+    text-decoration: underline;
+}
+
+/* ============================================ */
+/* SEÇÕES                                       */
+/* ============================================ */
+.secao {
+    padding: 60px 0;
+    border-bottom: 1px solid #ddd;
+}
+
+.secao:nth-child(even) {
+    background-color: #ffffff;
+}
+
+.secao:nth-child(odd) {
+    background-color: #f0f7f0;
+}
+
+h2 {
+    color: #2e7d32;
+    margin-bottom: 30px;
+    font-size: 2rem;
+    border-left: 5px solid #1565c0;
+    padding-left: 20px;
+}
+
+.destaque {
+    font-size: 1.3rem;
+    font-weight: bold;
+    color: #1565c0;
+    margin-bottom: 20px;
+}
+
+/* Cards da seção problema */
+.cards {
+    display: flex;
+    gap: 30px;
+    margin-top: 30px;
+    flex-wrap: wrap;
+}
+
+.card {
+    background: white;
+    border-radius: 12px;
+    padding: 25px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    flex: 1;
+    min-width: 220px;
+    transition: transform 0.3s;
+    border-top: 4px solid #2e7d32;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.card h3 {
+    color: #1565c0;
+    margin-bottom: 15px;
+}
+
+/* Tabela de impactos */
+.tabela-container {
+    overflow-x: auto;
+    margin: 30px 0;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+th, td {
+    border: 1px solid #ddd;
+    padding: 12px;
+    text-align: left;
+}
+
+th {
+    background-color: #2e7d32;
+    color: white;
+}
+
+tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+.dica {
+    background-color: #e8f5e9;
+    padding: 15px;
+    border-radius: 10px;
+    border-left: 5px solid #2e7d32;
+    margin-top: 20px;
+}
+
+/* ============================================ */
+/* QUIZ INTERATIVO                              */
+/* ============================================ */
+.quiz-container {
+    background-color: white;
+    border-radius: 16px;
+    padding: 25px;
+    margin: 25px 0;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.pergunta {
+    margin-bottom: 25px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #eee;
+}
+
+.pergunta p {
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #1a1a1a;
+}
+
+.pergunta label {
+    display: block;
+    margin: 8px 0;
+    cursor: pointer;
+}
+
+.pergunta input[type="radio"] {
+    margin-right: 10px;
+    accent-color: #2e7d32;
+}
+
+.quiz-botoes {
+    display: flex;
+    gap: 15px;
+    margin: 20px 0;
+    flex-wrap: wrap;
+}
+
+.btn-primary, .btn-secondary {
+    padding: 12px 24px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 1rem;
+    transition: background 0.3s;
+}
+
+.btn-primary {
+    background-color: #2e7d32;
+    color: white;
+}
+
+.btn-primary:hover {
+    background-color: #1b5e20;
+}
+
+.btn-secondary {
+    background-color: #8d6e63;
+    color: white;
+}
+
+.btn-secondary:hover {
+    background-color: #6d4c41;
+}
+
+.resultado {
+    margin-top: 20px;
+    padding: 20px;
+    border-radius: 12px;
+    font-weight: bold;
+    text-align: center;
+    font-size: 1.1rem;
+}
+
+.resultado-acerto {
+    background-color: #c8e6c9;
+    color: #1b5e20;
+    border: 1px solid #2e7d32;
+}
+
+.resultado-erro {
+    background-color: #ffcdd2;
+    color: #c62828;
+    border: 1px solid #d32f2f;
+}
+
+/* ============================================ */
+/* CONCLUSÃO E RODAPÉ                           */
+/* ============================================ */
+.conclusao ul {
+    margin: 20px 0 20px 30px;
+}
+
+.conclusao li {
+    margin: 10px 0;
+}
+
+.mensagem-final {
+    font-size: 1.3rem;
+    text-align: center;
+    background-color: #2e7d32;
+    color: white;
+    padding: 20px;
+    border-radius: 50px;
+    margin-top: 30px;
+}
+
+footer {
+    background-color: #1a1a1a;
+    color: white;
+    text-align: center;
+    padding: 30px 0;
+    font-size: 0.9rem;
+}
+
+footer p {
+    margin: 5px 0;
+}
+
+/* ============================================ */
+/* RESPONSIVIDADE                               */
+/* ============================================ */
+@media (max-width: 768px) {
+    .cards {
+        flex-direction: column;
+    }
+    
+    h2 {
+        font-size: 1.6rem;
+    }
+    
+    nav ul {
+        justify-content: center;
+        gap: 15px;
+    }
+    
+    .logo {
+        text-align: center;
+    }
+    
+    .acessibilidade-painel {
+        bottom: 90px;
+        right: 10px;
+    }
+    
+    .acessibilidade-btn {
+        bottom: 15px;
+        right: 15px;
+        padding: 8px 15px;
+        font-size: 12px;
+    }
+    
+    .btn-primary, .btn-secondary {
+        padding: 10px 18px;
+        font-size: 0.9rem;
+    }
+    
+    .mensagem-final {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .secao {
+        padding: 40px 0;
+    }
+    
+    table, th, td {
+        font-size: 12px;
+        padding: 8px;
+    }
+}
